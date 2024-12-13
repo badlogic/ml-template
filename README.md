@@ -6,6 +6,7 @@ GitHub project template to quickly spin up Torch/HF based ML projects for NVIDIA
 
 - Git
 - Python >= 3.12
+- CUDA SDK, if you want to run on NVIDIA cards: https://developer.nvidia.com/cuda-downloads
 - Rye, see https://rye.astral.sh/guide/installation/, with the following options
   - Run a Python installed and managed by Rye
   - Default toolchain: >= cpython@3.12
