@@ -29,8 +29,21 @@ allow-direct-references = true
 [tool.hatch.build.targets.wheel]
 packages = ["src/ml_template"]
 
+[tool.uv]
+index-strategy = "unsafe-best-match"
+
 [tool.uv.sources]
 torch = [
+    { index = "torch-gpu", marker = "platform_system == 'Linux'" },
+    { index = "torch-gpu", marker = "platform_system == 'Windows'" },
+    { index = "torch-cpu", marker = "platform_system == 'Darwin'" },
+]
+torchvision = [
+    { index = "torch-gpu", marker = "platform_system == 'Linux'" },
+    { index = "torch-gpu", marker = "platform_system == 'Windows'" },
+    { index = "torch-cpu", marker = "platform_system == 'Darwin'" },
+]
+torchaudio = [
     { index = "torch-gpu", marker = "platform_system == 'Linux'" },
     { index = "torch-gpu", marker = "platform_system == 'Windows'" },
     { index = "torch-cpu", marker = "platform_system == 'Darwin'" },
